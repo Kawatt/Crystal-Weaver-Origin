@@ -1,0 +1,6 @@
+{
+    "hidden": true,
+    "type": "apoli:particle",
+    "particle": "minecraft:end_rod",
+    "frequency": 10
+}

@@ -1,2 +1,2 @@
-# Template-Origin
-Origin datapack that adds the [origin] Origin.
+# Crysalid-Origin
+Origin datapack that adds the Crysalid Origin.

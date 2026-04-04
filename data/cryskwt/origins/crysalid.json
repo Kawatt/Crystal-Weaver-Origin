@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"cryskwt:crystals",
+		"cryskwt:teleport",
+		"cryskwt:particles",
+		"origins:water_vulnerability",
+		"origins:fragile"
+	],
+	"icon": {
+		"item": "minecraft:end_crystal",
+		"tag": "{CustomModelData:2934609}"
+	},
+	"order": 10,
+	"impact": 0,
+	"name": "Crysalid",
+	"description": "Description"
+}
