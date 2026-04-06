@@ -1,2 +1,2 @@
-# Crysalid-Origin
-Origin datapack that adds the Crysalid Origin.
+# Crystal-Weaver-Origin
+Origin datapack that adds the Crystal Weaver Origin.

@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"cryskwt:crystals",
+		"cryskwt:teleport",
+		"cryskwt:particles",
+		"cryskwt:climbing",
+		"origins:water_vulnerability",
+		"origins:fragile",
+		"origins:arthropod"
+	],
+	"icon": {
+		"item": "minecraft:end_crystal",
+		"tag": "{CustomModelData:2934609}"
+	},
+	"order": 3,
+	"impact": 2,
+	"name": "Crystal Weaver",
+	"description": "This arachnid has harnesed the power of teleportation. Instead of webs, it spins crystals."
+}

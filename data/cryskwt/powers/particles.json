@@ -1,4 +1,6 @@
 {
+    "name": "End Rod Particles",
+    "description": "End rod particles",
     "hidden": true,
     "type": "apoli:particle",
     "particle": "minecraft:end_rod",

@@ -1,4 +1,6 @@
 {
+    "name": "Warp Crystal",
+    "description": "Power for the magma cube that acts as the crystal's hitbox.",
     "type": "apoli:multiple",
     "dieres": {
         "type": "apoli:resource",
