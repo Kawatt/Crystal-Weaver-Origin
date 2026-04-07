@@ -325,6 +325,7 @@
 	},
 	"glowfar": {
 		"type": "apoli:entity_glow",
+		"use_teams": false,
 		"red": 0.9,
 		"green": 0.2,
 		"blue": 0.2,
@@ -351,6 +352,7 @@
 	},
 	"glowclose": {
 		"type": "apoli:entity_glow",
+		"use_teams": false,
 		"red": 0.7,
 		"green": 0.3,
 		"blue": 0.7,
