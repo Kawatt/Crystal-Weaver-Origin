@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/handheld",
 	"textures": {
-	  	"layer0": "spolikwt:item/png"
+	  	"layer0": "cryskwt:item/icon"
 	}
 }

@@ -1,14 +1,14 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:item/air"
+    "layer0": "minecraft:item/end_crystal"
   },
   "overrides": [
     {
       "predicate": {
-        "custom_model_data": 10000000
+        "custom_model_data": 2934609
       },
-      "model": "namespace:item/model"
+      "model": "cryskwt:item/model"
     }
   ]
 }
