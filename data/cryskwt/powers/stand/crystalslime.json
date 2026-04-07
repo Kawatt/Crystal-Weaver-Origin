@@ -10,7 +10,7 @@
             "type": "apoli:and",
             "actions": [
                 {
-                    "type": "apoli:action_on_set",
+                    "type": "origins:action_on_entity_set",
                     "set": "*:*_set",
                     "bientity_action": {
                         "type": "apoli:target_action",
@@ -51,7 +51,7 @@
         "type": "apoli:modify_damage_taken",
         "modifier": {
             "operation": "multiply_total_multiplicative",
-            "value": -1
+            "amount": -1
         },
         "damage_condition": {
             "type": "apoli:in_tag",
@@ -125,7 +125,7 @@
                     "entity_type": "minecraft:end_crystal",
                     "tag": "{Tags:[\"cryskwt.crystal\",\"origins.dontdmg\"],ShowBottom:0b,Invulnerable:1b}",
                     "bientity_action": {
-                        "type": "apoli:add_to_set",
+                        "type": "apoli:add_to_entity_set",
                         "set": "*:*_set"
                     }
                 }
@@ -147,14 +147,14 @@
                 "type": "apoli:and",
                 "actions": [
                     {
-                        "type": "apoli:add_to_set",
+                        "type": "origins:add_to_entity_set",
                         "set": "*:*_set"
                     }
                 ]
             }
         },
         "condition": {
-            "type": "apoli:set_size",
+            "type": "origins:entity_set_size",
             "set": "*:*_set",
             "comparison": "==",
             "compare_to": 0
@@ -187,7 +187,7 @@
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "apoli:action_on_set",
+            "type": "origins:action_on_entity_set",
             "set": "*:*_set",
             "bientity_action": {
                 "type": "apoli:target_action",
@@ -201,7 +201,7 @@
             "type": "apoli:and",
             "actions": [
                 {
-                    "type": "apoli:action_on_set",
+                    "type": "origins:action_on_entity_set",
                     "set": "*:*_set",
                     "bientity_action": {
                         "type": "apoli:target_action",
@@ -220,7 +220,7 @@
                     "entity_type": "minecraft:end_crystal",
                     "tag": "{Tags:[\"cryskwt.crystal\",\"origins.dontdmg\"],ShowBottom:0b,Invulnerable:1b}",
                     "bientity_action": {
-                        "type": "apoli:add_to_set",
+                        "type": "apoli:add_to_entity_set",
                         "set": "*:*_set"
                     }
                 }

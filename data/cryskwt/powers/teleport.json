@@ -1,19 +1,19 @@
 {
-	"name": "Interlink",
-	"description": "While sneaking, look at a Warp Crystal to teleport to it.",
-	"badges": [
-		{
-			"type": "origins:keybind",
-			"sprite": "origins:textures/gui/badge/active.png",
-			"text": "Active ability, charge with %s while sneaking."
-		},
-		{
-			"type": "origins:tooltip",
-			"sprite": "origins:textures/gui/badge/star.png",
-			"text": "Warp Crystals are visible and may be teleported to through walls."
-		}
-	],
-	"type": "origins:multiple",
+    "name": "Interlink",
+    "description": "While sneaking, look at a Warp Crystal to teleport to it.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Active ability, charge with %s while sneaking."
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Warp Crystals are visible and may be teleported to through walls."
+        }
+    ],
+    "type": "origins:multiple",
     "n": {
         "type": "origins:resource",
         "min": 0,
@@ -51,57 +51,57 @@
                         "compare_to": 0
                     },
                     "if_action": {
-						"type": "origins:play_sound",
-						"sound": "block.beacon.activate",
-						"pitch": 2
-					}
+                        "type": "origins:play_sound",
+                        "sound": "block.beacon.activate",
+                        "pitch": 2
+                    }
                 },
-				{
-					"type": "apoli:raycast",
-					"distance": 64,
-					"entity": true,
-					"block": false,
-					"bientity_action": {
-						"type": "apoli:and",
-						"actions": [
-							{
-								"type": "apoli:actor_action",
-								"action": {
-									"type": "apoli:execute_command",
-									"command": "function cryskwt:savetarget"
-								}
-							},
-							{
-								"type": "apoli:target_action",
-								"action": {
-									"type": "apoli:change_resource",
-									"resource": "*:stand/crystalslime_n",
-									"change": 2
-								}
-							}
-						]
-					},
-					"bientity_condition": {
-						"type": "apoli:target_condition",
-						"condition": {
-							"type": "apoli:and",
-							"conditions": [
-								{
-									"type": "apoli:entity_type",
-									"entity_type": "minecraft:magma_cube"
-								},
-								{
-									"type": "apoli:power",
-									"power": "*:stand/crystalslime"
-								}
-							]
-						}
-					}
-				},
-				{
-					"type": "apoli:execute_command",
-					"command": "execute align xyz run tp ~0.5 ~0.2 ~0.5"
-				},
+                {
+                    "type": "apoli:raycast",
+                    "distance": 64,
+                    "entity": true,
+                    "block": false,
+                    "bientity_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:actor_action",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "function cryskwt:savetarget"
+                                }
+                            },
+                            {
+                                "type": "apoli:target_action",
+                                "action": {
+                                    "type": "apoli:change_resource",
+                                    "resource": "*:stand/crystalslime_n",
+                                    "change": 2
+                                }
+                            }
+                        ]
+                    },
+                    "bientity_condition": {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:entity_type",
+                                    "entity_type": "minecraft:magma_cube"
+                                },
+                                {
+                                    "type": "apoli:power",
+                                    "power": "*:stand/crystalslime"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "apoli:execute_command",
+                    "command": "execute align xyz run tp ~0.5 ~0.2 ~0.5"
+                },
                 {
                     "type": "origins:change_resource",
                     "resource": "*:*_n",
@@ -117,62 +117,62 @@
             "key": "key.origins.primary_active",
             "continuous": true
         },
-		"condition": {
-			"type": "apoli:and",
-			"conditions": [
-				{
-					"type": "apoli:resource",
-					"resource": "*:*_cooldown",
-					"comparison": "==",
-					"compare_to": 0
-				},
-				{
-					"type": "apoli:sneaking"
-				},
-				{
-					"type": "apoli:raycast",
-					"distance": 63,
-					"entity": true,
-					"block": false,
-					"hit_bientity_condition": {
-						"type": "apoli:target_condition",
-						"condition": {
-							"type": "apoli:and",
-							"conditions": [
-								{
-									"type": "apoli:entity_type",
-									"entity_type": "minecraft:magma_cube"
-								},
-								{
-									"type": "apoli:power",
-									"power": "*:stand/crystalslime"
-								}
-							]
-						}
-					}
-				}
-			]
-		}
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "apoli:sneaking"
+                },
+                {
+                    "type": "apoli:raycast",
+                    "distance": 63,
+                    "entity": true,
+                    "block": false,
+                    "hit_bientity_condition": {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:entity_type",
+                                    "entity_type": "minecraft:magma_cube"
+                                },
+                                {
+                                    "type": "apoli:power",
+                                    "power": "*:stand/crystalslime"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
     },
     "hold_or_release": {
         "type": "origins:action_over_time",
         "entity_action": {
-			"type": "apoli:change_resource",
-			"resource": "*:*_tp",
-			"change": 1
-		},
+            "type": "apoli:change_resource",
+            "resource": "*:*_tp",
+            "change": 1
+        },
         "interval": 1,
         "falling_action": {
-			"type": "apoli:and",
-			"actions": [
-				{
-					"type": "apoli:change_resource",
-					"resource": "*:*_tp",
-					"operation": "set",
-					"change": 0
-				}
-			]
-		},
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:change_resource",
+                    "resource": "*:*_tp",
+                    "operation": "set",
+                    "change": 0
+                }
+            ]
+        },
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_n",
@@ -180,211 +180,211 @@
             "compare_to": 1
         }
     },
-	"stop": {
-		"type": "apoli:modify_velocity",
-		"axes": [
-			"x",
-			"y",
-			"z"
-		],
-		"modifier": {
-			"operation": "multiply_total_multiplicative",
-			"value": -1
-		},
+    "stop": {
+        "type": "apoli:modify_velocity",
+        "axes": [
+            "x",
+            "y",
+            "z"
+        ],
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "amount": -1
+        },
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_tp",
             "comparison": ">",
             "compare_to": 0
         }
-	},
-	"fall": {
-		"type": "apoli:modify_falling",
-		"velocity": 0,
+    },
+    "fall": {
+        "type": "apoli:modify_falling",
+        "velocity": 0,
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_tp",
             "comparison": ">",
             "compare_to": 0
         }
-	},
-	"tp": {
-		"type": "apoli:resource",
-		"min": 0,
-		"max": 30,
-		"hud_render": {
-			"bar_index": 6,
-			"condition": {
-				"type": "apoli:resource",
-				"resource": "*:*_tp",
-				"comparison": ">",
-				"compare_to": 1
-			}
-		},
-		"max_action": {
-			"type": "apoli:and",
-			"actions": [
-				{
-					"type": "apoli:raycast",
-					"distance": 64,
-					"entity": true,
-					"block": false,
-					"bientity_action": {
-						"type": "apoli:and",
-						"actions": [
-							{
-								"type": "apoli:target_action",
-								"action": {
-									"type": "apoli:execute_command",
-									"command": "tag @s add cryskwt.tp"
-								}
-							},
-							{
-								"type": "apoli:actor_action",
-								"action": {
-									"type": "apoli:execute_command",
-									"command": "execute at @e[tag=cryskwt.tp,distance=..66,limit=1,sort=nearest] rotated as @s run tp @s ~ ~1 ~ ~ ~"
-								}
-							},
-							{
-								"type": "apoli:target_action",
-								"action": {
-									"type": "apoli:execute_command",
-									"command": "tag @s remove cryskwt.tp"
-								}
-							}
-						]
-					},
-					"bientity_condition": {
-						"type": "apoli:target_condition",
-						"condition": {
-							"type": "apoli:and",
-							"conditions": [
-								{
-									"type": "apoli:entity_type",
-									"entity_type": "minecraft:magma_cube"
-								},
-								{
-									"type": "apoli:power",
-									"power": "*:stand/crystalslime"
-								}
-							]
-						}
-					}
-				},
-				{
-					"type": "apoli:delay",
-					"ticks": 1,
-					"action": {
-						"type": "apoli:and",
-						"actions": [
-							{
-								"type": "apoli:play_sound",
-								"sound": "minecraft:entity.enderman.teleport"
-							},
-							{
-								"type": "apoli:play_sound",
-								"sound": "minecraft:entity.generic.explode",
-								"volume": 0.5,
-								"pitch": 1.2
-							},
-							{
-								"type": "apoli:execute_command",
-								"command": "particle minecraft:dust 0.8 0 0.8 1 ~ ~ ~ 1 1 1 1 40"
-							}
-						]
-					}
-				},
-				{
-					"type": "apoli:change_resource",
-					"operation": "set",
-					"resource": "*:*_tp",
-					"change": 0
-				},
-				{
-					"type": "apoli:change_resource",
-					"operation": "set",
-					"resource": "*:*_n",
-					"change": 0
-				},
-				{
-					"type": "apoli:trigger_cooldown",
-					"power": "*:*_cooldown"
-				}
-			]
-		}
-	},
-	"cooldown": {
-		"type": "apoli:cooldown",
-		"cooldown": 10,
-		"hud_render": {
-			"should_render": true,
-			"bar_index": 6,
-			"inverted": true
-		}
-	},
-	"glowfar": {
-		"type": "apoli:entity_glow",
-		"red": 0.9,
-		"green": 0.2,
-		"blue": 0.2,
-		"bientity_condition": {
-			"type": "apoli:and",
-			"conditions": [
-				{
-					"type": "apoli:target_condition",
-					"condition": {
-						"type": "apoli:entity_type",
-						"entity_type": "minecraft:end_crystal"
-					}
-				},
-				{
-					"type": "apoli:distance",
-					"comparison": ">=",
-					"compare_to": 64
-				}
-			]
-		},
-		"condition": {
-			"type": "apoli:sneaking"
-		}
-	},
-	"glowclose": {
-		"type": "apoli:entity_glow",
-		"red": 0.7,
-		"green": 0.3,
-		"blue": 0.7,
-		"bientity_condition": {
-			"type": "apoli:and",
-			"conditions": [
-				{
-					"type": "apoli:target_condition",
-					"condition": {
-						"type": "apoli:entity_type",
-						"entity_type": "minecraft:end_crystal"
-					}
-				},
-				{
-					"type": "apoli:distance",
-					"comparison": "<",
-					"compare_to": 64
-				}
-			]
-		},
-		"condition": {
-			"type": "apoli:sneaking"
-		}
-	},
-	"glow": {
-		"type": "apoli:self_glow",
-		"red": 0.7,
-		"green": 0.3,
-		"blue": 0.7,
-		"condition": {
-			"type": "apoli:resource",
-			"resource": "*:*_tp",
-			"comparison": ">",
-			"compare_to": 0
-		}
-	}
+    },
+    "tp": {
+        "type": "apoli:resource",
+        "min": 0,
+        "max": 30,
+        "hud_render": {
+            "bar_index": 6,
+            "condition": {
+                "type": "apoli:resource",
+                "resource": "*:*_tp",
+                "comparison": ">",
+                "compare_to": 1
+            }
+        },
+        "max_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:raycast",
+                    "distance": 64,
+                    "entity": true,
+                    "block": false,
+                    "bientity_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:target_action",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "tag @s add cryskwt.tp"
+                                }
+                            },
+                            {
+                                "type": "apoli:actor_action",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "execute at @e[tag=cryskwt.tp,distance=..66,limit=1,sort=nearest] rotated as @s run tp @s ~ ~1 ~ ~ ~"
+                                }
+                            },
+                            {
+                                "type": "apoli:target_action",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "tag @s remove cryskwt.tp"
+                                }
+                            }
+                        ]
+                    },
+                    "bientity_condition": {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:entity_type",
+                                    "entity_type": "minecraft:magma_cube"
+                                },
+                                {
+                                    "type": "apoli:power",
+                                    "power": "*:stand/crystalslime"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "apoli:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:entity.enderman.teleport"
+                            },
+                            {
+                                "type": "apoli:play_sound",
+                                "sound": "minecraft:entity.generic.explode",
+                                "volume": 0.5,
+                                "pitch": 1.2
+                            },
+                            {
+                                "type": "apoli:execute_command",
+                                "command": "particle minecraft:dust 0.8 0 0.8 1 ~ ~ ~ 1 1 1 1 40"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "apoli:change_resource",
+                    "operation": "set",
+                    "resource": "*:*_tp",
+                    "change": 0
+                },
+                {
+                    "type": "apoli:change_resource",
+                    "operation": "set",
+                    "resource": "*:*_n",
+                    "change": 0
+                },
+                {
+                    "type": "apoli:trigger_cooldown",
+                    "power": "*:*_cooldown"
+                }
+            ]
+        }
+    },
+    "cooldown": {
+        "type": "apoli:cooldown",
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 6,
+            "inverted": true
+        }
+    },
+    "glowfar": {
+        "type": "apoli:entity_glow",
+        "red": 0.9,
+        "green": 0.2,
+        "blue": 0.2,
+        "bientity_condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:target_condition",
+                    "condition": {
+                        "type": "apoli:entity_type",
+                        "entity_type": "minecraft:end_crystal"
+                    }
+                },
+                {
+                    "type": "apoli:distance",
+                    "comparison": ">=",
+                    "compare_to": 64
+                }
+            ]
+        },
+        "condition": {
+            "type": "apoli:sneaking"
+        }
+    },
+    "glowclose": {
+        "type": "apoli:entity_glow",
+        "red": 0.7,
+        "green": 0.3,
+        "blue": 0.7,
+        "bientity_condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:target_condition",
+                    "condition": {
+                        "type": "apoli:entity_type",
+                        "entity_type": "minecraft:end_crystal"
+                    }
+                },
+                {
+                    "type": "apoli:distance",
+                    "comparison": "<",
+                    "compare_to": 64
+                }
+            ]
+        },
+        "condition": {
+            "type": "apoli:sneaking"
+        }
+    },
+    "glow": {
+        "type": "apoli:self_glow",
+        "red": 0.7,
+        "green": 0.3,
+        "blue": 0.7,
+        "condition": {
+            "type": "apoli:resource",
+            "resource": "*:*_tp",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    }
 }
