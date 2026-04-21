@@ -54,9 +54,19 @@
             "amount": -1
         },
         "damage_condition": {
-            "type": "apoli:in_tag",
-            "tag": "minecraft:bypasses_invulnerability",
-            "inverted": true
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:in_tag",
+                    "tag": "minecraft:bypasses_invulnerability",
+                    "inverted": true
+                },
+                {
+                    "type": "apoli:in_tag",
+                    "tag": "*:crystal_invulnerable",
+                    "inverted": true
+                }
+            ]
         },
         "bientity_action": {
             "type": "apoli:and",
@@ -91,6 +101,17 @@
             "type": "apoli:change_resource",
             "resource": "*:*_dieres",
             "change": 1
+        }
+    },
+    "die3": {
+        "type": "apoli:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "amount": -1
+        },
+        "damage_condition": {
+            "type": "apoli:in_tag",
+            "tag": "*:crystal_invulnerable"
         }
     },
     "invis": {
