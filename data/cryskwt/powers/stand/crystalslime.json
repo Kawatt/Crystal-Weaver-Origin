@@ -54,9 +54,19 @@
             "value": -1
         },
         "damage_condition": {
-            "type": "apoli:in_tag",
-            "tag": "minecraft:bypasses_invulnerability",
-            "inverted": true
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:in_tag",
+                    "tag": "minecraft:bypasses_invulnerability",
+                    "inverted": true
+                },
+                {
+                    "type": "apoli:in_tag",
+                    "tag": "*:crystal_invulnerable",
+                    "inverted": true
+                }
+            ]
         },
         "bientity_action": {
             "type": "apoli:and",
@@ -93,6 +103,17 @@
             "change": 1
         }
     },
+    "die3": {
+        "type": "apoli:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -1
+        },
+        "damage_condition": {
+            "type": "apoli:in_tag",
+            "tag": "*:crystal_invulnerable"
+        }
+    },
     "invis": {
         "type": "apoli:invisibility",
         "render_armor": false,
@@ -102,14 +123,7 @@
         }
     },
     "set": {
-        "type": "apoli:entity_set",
-        "action_on_remove": {
-            "type": "apoli:target_action",
-            "action": {
-                "type": "apoli:execute_command",
-                "command": "say ough"
-            }
-        }
+        "type": "apoli:entity_set"
     },
     "callback": {
         "type": "apoli:action_on_callback",
@@ -123,10 +137,35 @@
                 {
                     "type": "apoli:spawn_entity",
                     "entity_type": "minecraft:end_crystal",
-                    "tag": "{Tags:[\"cryskwt.crystal\",\"origins.dontdmg\"],ShowBottom:0b,Invulnerable:1b}",
+                    "tag": "{Tags:[\"cryskwt.crystal\",\"origins.dontdmg\",\"cryskwt.new\"],ShowBottom:0b,Invulnerable:1b}"
+                },
+                {
+                    "type": "apoli:area_of_effect",
+                    "radius": 2,
                     "bientity_action": {
-                        "type": "apoli:add_to_entity_set",
-                        "set": "*:*_set"
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:add_to_entity_set",
+                                "set": "*:*_set"
+                            },
+                            {
+                                "type": "apoli:target_action",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "tag remove @s cryskwt.new"
+                                }
+                            }
+                        ]
+                    },
+                    "bientity_condition": {
+                        "type": "apoli:target_condition",
+                        "condition": {
+                            "type": "apoli:command",
+                            "command": "execute if entity @s[tag=cryskwt.new]",
+                            "comparison": ">",
+                            "compare_to": 0
+                        }
                     }
                 }
             ]
