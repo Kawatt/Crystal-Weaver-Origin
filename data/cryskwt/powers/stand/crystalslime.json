@@ -69,25 +69,37 @@
             ]
         },
         "bientity_action": {
-            "type": "apoli:and",
-            "actions": [
-                {
-                    "type": "apoli:target_action",
-                    "action": {
-                        "type": "apoli:change_resource",
-                        "resource": "*:*_dieres",
-                        "change": 1
-                    }
-                },
-                {
-                    "type": "apoli:actor_action",
-                    "action": {
-                        "type": "apoli:change_resource",
-                        "resource": "*:crystals_cooldown",
-                        "change": -1000
-                    }
+            "type": "apoli:if_else",
+            "condition": {
+                "type": "apoli:target_condition",
+                "condition": {
+                    "type": "apoli:entity_set_size",
+                    "set": "*:*_set",
+                    "comparison": ">",
+                    "compare_to": 0
                 }
-            ]
+            },
+            "if_action": {
+                "type": "apoli:and",
+                "actions": [
+                    {
+                        "type": "apoli:target_action",
+                        "action": {
+                            "type": "apoli:change_resource",
+                            "resource": "*:*_dieres",
+                            "change": 1
+                        }
+                    },
+                    {
+                        "type": "apoli:actor_action",
+                        "action": {
+                            "type": "apoli:change_resource",
+                            "resource": "*:crystals_cooldown",
+                            "change": -1000
+                        }
+                    }
+                ]
+            }
         }
     },
     "die2": {
@@ -146,8 +158,12 @@
                         "type": "apoli:and",
                         "actions": [
                             {
-                                "type": "apoli:add_to_entity_set",
-                                "set": "*:*_set"
+                                "type": "apoli:delay",
+                                "ticks": 1,
+                                "action": {
+                                    "type": "apoli:add_to_entity_set",
+                                    "set": "*:*_set"
+                                }
                             },
                             {
                                 "type": "apoli:target_action",
